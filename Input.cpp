@@ -6,19 +6,21 @@
 #include "Input.h"
 #include "Help.h"
 
-int Input()
+int Input(float & a, float & b)
 {
     std::string FirstArgument;
     std::string SecondArgument;
-    float a = 0;
-    float b = 0;
     char sign = 0;
     int mode = 0;
 
     std::cin >> FirstArgument;
 
     if(FirstArgument == "help")
+    {
         Help();
+        mode = 0;
+        return mode;
+    }
     else if(FirstArgument == "exit")
     {
         mode = 5;
@@ -32,7 +34,7 @@ int Input()
         }
         catch(...)
         {
-            std::cout << "Wrong first argument bro" << std::endl;
+            std::cout << "Wrong first argument bro" << std::endl << std::endl;
             mode = 0;
             return mode;
         }
@@ -46,7 +48,7 @@ int Input()
     else if(sign == '/')    mode = 4;
     else
     {
-        std::cout << "Wrong sign bro" << std::endl;
+        std::cout << "Wrong sign bro" << std::endl << std::endl;
         mode = 0;
         return mode;
     }
@@ -59,7 +61,7 @@ int Input()
     }
     catch(...)
     {
-        std::cout << "Wrong second argument bro" << std::endl;
+        std::cout << "Wrong second argument bro" << std::endl << std::endl;
         mode = 0;
         return mode;
     }

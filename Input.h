@@ -5,6 +5,6 @@
 #ifndef CALCULATOR2_INPUT_H
 #define CALCULATOR2_INPUT_H
 
-int Input();
+int Input(float & a, float & b);
 
 #endif //CALCULATOR2_INPUT_H
