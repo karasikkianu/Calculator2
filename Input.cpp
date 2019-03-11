@@ -2,26 +2,29 @@
 // Created by МожаевАН on 06.03.2019.
 //
 
-#include <iostream>
 #include "Input.h"
-#include "Help.h"
 
+//Input parsing function
 int Input(float & a, float & b)
 {
     std::string FirstArgument;
     std::string SecondArgument;
     char sign = 0;
+    //Available mods: 0 - nothing, 1 - addition, 2 - subtraction,
+    //3 - multiplication, 4 - division, 5 - exit
     int mode = 0;
+
+    //+++ Parsing first argument +++\\
 
     std::cin >> FirstArgument;
 
-    if(FirstArgument == "help")
+    if(FirstArgument == "help")         //Processing help
     {
         Help();
         mode = 0;
         return mode;
     }
-    else if(FirstArgument == "exit")
+    else if(FirstArgument == "exit")    //Processing exit
     {
         mode = 5;
         return mode;
@@ -40,8 +43,11 @@ int Input(float & a, float & b)
         }
     }
 
+    //+++ Parsing sign +++\\
+
     std::cin >> sign;
 
+    //Mode selection
     if(sign == '+')         mode = 1;
     else if(sign == '-')    mode = 2;
     else if(sign == '*')    mode = 3;
@@ -52,6 +58,8 @@ int Input(float & a, float & b)
         mode = 0;
         return mode;
     }
+
+    //+++ Parsing second argument +++\\
 
     std::cin >> SecondArgument;
 

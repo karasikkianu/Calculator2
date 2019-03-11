@@ -2,7 +2,6 @@
 // Created by МожаевАН on 04.03.2019.
 //
 
-#include <stdexcept>
 #include "Calculator.h"
 
 float Calculator::GetA()
@@ -39,6 +38,7 @@ void Calculator::Division()
 {
     answer = a / b;
 
+    //Processing division by zero
     if(b == 0)
         throw std::logic_error("DivisionByZero");
 }

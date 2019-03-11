@@ -2,16 +2,17 @@
 // Created by МожаевАН on 07.03.2019.
 //
 
-#include <iostream>
 #include "Action.h"
-#include "Calculator.h"
 
+//Function where actual calculation going
 void Action(int mode, float a, float b)
 {
+    //Making new object
     Calculator Calculator(a, b);
 
     try
     {
+        //The choice of action depending on the mod
         switch (mode)
         {
             case 1:
@@ -30,7 +31,8 @@ void Action(int mode, float a, float b)
 
         std::cout << "Congratulations, the answer is: " << Calculator.GetAnswer() << std::endl << std::endl;
     }
-    catch (...)
+    //Processing division by zero
+    catch (std::logic_error)
     {
         std::cout << "Congratulations, you have reached INFINITE POWER!" << std::endl << std::endl;
     }

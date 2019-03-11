@@ -12,7 +12,6 @@ add_executable(
         main.cpp
         ../Calculator.h
         ../Calculator.cpp
-        TestCalculator.cpp
-        )
+        TestCalculator.cpp)
 
 target_link_libraries(tests gtest)
